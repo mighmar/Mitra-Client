@@ -40,6 +40,9 @@ export default withAuth (class GridContent extends React.Component {
             },
             gridStyles:{
 
+            },
+            gridFunctions:{
+
             }
         ,
             userSelection:[]
@@ -47,6 +50,7 @@ export default withAuth (class GridContent extends React.Component {
         userStyles:{}
         ,
         stylePanelVisible:false,
+        documentationVisibility:false,
         colorPickerSelection:'#fff',
         fontFamilySelection:'Arial'
     };
@@ -60,6 +64,11 @@ export default withAuth (class GridContent extends React.Component {
                 this.state.gridStyles[i]={};
             if(this.state.gridStyles[i][j]===undefined)
                 this.state.gridStyles[i][j]={};
+
+                if(this.state.gridFunctions[i]===undefined)
+                this.state.gridFunctions[i]={};
+            if(this.state.gridFunctions[i][j]===undefined)
+                this.state.gridFunctions[i][j]={};
 
             if(this.state.grid[i]===undefined)
                 this.state.grid[i]={};
@@ -345,34 +354,36 @@ export default withAuth (class GridContent extends React.Component {
 
     }
 
-    toggleStateValue (){
-        //let newValue = !this.state.stylePanelVisible;
-        //provera da li je dozvoljena promena (poziv servera) 
+    toggleStateValue (key){
         this.setState(prevState => ({
-            stylePanelVisible: !prevState.stylePanelVisible
+            [key]: !prevState[key]
           }));
-        //alert(JSON.stringify(this.state, null, 4));
-        //alert(this.state.stylePanelVisible);
-
     }
-
     
 
-    /*cell = <td className="defaultCell"><div  contentEditable></div> </td>;
-    rowCells =fillArray(this.cell,100);
-    tableRow = <tr> {this.rowCells} </tr>;
-    wholeTable = fillArray(this.tableRow,100);
-
-    wholeTableTest = indexArray(100).map(i=>{
-        return <tr>{indexArray(100).map(j=>{
-            return <td className="defaultCell">
-            <div id={i+"-"+j} suppressContentEditableWarning={true} contentEditable onInput={this.handleCellValueChange}>
-            </div> </td>
-        }) } </tr>;
-    });*/
     rowsArrayIndex = indexArray(40);
+    documentationVisibility=false;
 
     render() {
+        let functionDocumentation="";
+        if(this.state.documentationVisibility){
+            functionDocumentation=<div className="row stylePanel">
+            <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
+            Functions documentation ready
+          </div>
+          <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
+            Functions documentation ready
+          </div>
+          <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
+            Functions documentation ready
+          </div>
+          <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
+            Functions documentation ready
+          </div>
+                
+              
+          </div>;
+        }
             return         (
                 <div>
                     <ReactTooltip />
@@ -385,14 +396,15 @@ export default withAuth (class GridContent extends React.Component {
                 <div className="col-lg-1 col-lg-1 col-xl-1 " >
                 </div>
             </div>
+            {functionDocumentation}
             <StylePanel styleVisible={this.state.stylePanelVisible} handleColorChange={this.handleColorChange.bind(this)} handleFontChange={this.handleFontChange.bind(this)} currColor={this.state.colorPickerSelection}/>
             <div className="row">
                 <div className="col-lg-1 col-lg-1 col-xl-1 gridToolbar" >
                     <div className="row centerFlex">
-                            <div className="btnFunction" data-tip="Functions documentation"></div>
+                            <div className="btnFunction" data-tip="Functions documentation" onClick={this.toggleStateValue.bind(this,"documentationVisibility")}></div>
                     </div>
                     <div className="row centerFlex">
-                            <div className="btnPaint" data-tip="Style setting" onClick={this.toggleStateValue.bind(this)}></div>
+                            <div className="btnPaint" data-tip="Style setting" onClick={this.toggleStateValue.bind(this,"stylePanelVisible")}></div>
                     </div>
                 </div>
                 <div className="col-lg-10 col-lg-10 col-xl-10 gridPanel" >

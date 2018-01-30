@@ -30,23 +30,26 @@ class StylePanel extends React.Component {
       if(this.props.styleVisible){
           return         <div className="row stylePanel">
           <ReactTooltip />
+          <div className="col-lg-1 col-lg-1 col-xl-1 ">
+          </div>
           <div className="col-lg-1 col-lg-1 col-xl-1 stylePanelLabel">
           Cell background color:
           </div>
-          <div className="col-lg-2 col-lg-2 col-xl-2" /*onClick={ ()=>{this.props.changePage("Dashboard")}}*/>
+          <div className="col-lg-2 col-lg-2 col-xl-2" >
             <CompactPicker color={this.props.currColor} onChangeComplete={this.props.handleColorChange} />
 
           </div>
-          <div className="col-lg-3 col-lg-3 col-xl-3" /*onClick={ ()=>{this.props.changePage("Dashboard")}}*/>
-          <div className="row">
+          <div className="col-lg-1 col-lg-1 col-xl-1" >
+          </div>
+
           <div className="col-lg-1 col-lg-1 col-xl-1 stylePanelLabel">
           Font:
           </div>
           <div className="col-lg-2 col-lg-2 col-xl-2 stylePanelFontDropdown">
           <Dropdown className='fontDropdown' onChange={this.props.handleFontChange} options={safeFonts}  value={defaultFont} placeholder="Select a font style" />
           </div>
-          </div>
-          </div>
+
+          
             
         </div>;
       }else{
