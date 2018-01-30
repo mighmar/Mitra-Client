@@ -1,5 +1,5 @@
 import openSocket from 'socket.io-client';
-const  socket = openSocket('http://localhost:3001');
+const  socket = openSocket('https://sheltered-mountain-90809.herokuapp.com/');
 
 function userManagement(cb) {
   socket.on('login', user => console.log("Ulogovan user: "+user));
