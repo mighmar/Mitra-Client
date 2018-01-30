@@ -1,6 +1,6 @@
 import io from 'socket.io-client';
 import { create } from 'domain';
-const socket = io('https://blooming-woodland-94955.herokuapp.com/',{secure:true});
+const socket = io('https://sheltered-mountain-90809.herokuapp.com/',{secure:true});
 //const  socket = openSocket('http://localhost:3001');
 
 function addUser() {
