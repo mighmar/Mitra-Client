@@ -374,12 +374,13 @@ export default withAuth (class GridContent extends React.Component {
           </div>
           <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
             For example: <span style="color:green"> B3 + max(A1,C4 ^3) </span> <br/>
-            Or: <span stlye="color:green"> if(tan D1 &lt 1, D1, atan(1-D1)) </span>
+            Or: <span style="color:green"> if(tan D1 &lt 1, D1, atan(1-D1)) </span>
             
           </div>
           <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
              All basic arithmetic and trigonometric functions and operators are available, as well as string concatenation with "||" and string lenghth with "length"
              See <a href="https://github.com/silentmatt/expr-eval">here</a> for the complete list. 
+          </div>
                 
               
           </div>;
