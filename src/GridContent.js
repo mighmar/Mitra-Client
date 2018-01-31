@@ -373,8 +373,8 @@ export default withAuth (class GridContent extends React.Component {
             To do so you need to select the cell that you wish to write the result to and enter the formula of the function
           </div>
           <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
-            For example: <span style="color:green"> B3 + max(A1,C4 ^3) </span> <br/>
-            Or: <span style="color:green"> if(tan D1 &lt 1, D1, atan(1-D1)) </span>
+            For example: B3 + max(A1,C4 ^3) </span> <br/>
+            Or: if(tan D1 &lt 1, D1, atan(1-D1)) 
             
           </div>
           <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
