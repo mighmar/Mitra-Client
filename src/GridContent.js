@@ -381,6 +381,8 @@ export default withAuth (class GridContent extends React.Component {
              All basic arithmetic and trigonometric functions and operators are available, as well as string concatenation with "||" and string lenghth with "length"
              See <a href="https://github.com/silentmatt/expr-eval">here</a> for the complete list. 
           </div>
+          <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
+          </div>
                 
               
           </div>;
