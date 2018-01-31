@@ -382,6 +382,7 @@ export default withAuth (class GridContent extends React.Component {
              See <a href="https://github.com/silentmatt/expr-eval">here</a> for the complete list. 
           </div>
           <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
+             Lorem ipsum Lorem ipsum
           </div>
                 
               
