@@ -369,16 +369,18 @@ export default withAuth (class GridContent extends React.Component {
         if(this.state.documentationVisibility){
             functionDocumentation=<div className="row stylePanel">
             <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
-            Functions documentation ready
+            Mitra allows you to calculate functions of multiple variables and write the result to a cell.
+            To do so you need to select the cell that you wish to write the result to and enter the formula of the function
           </div>
           <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
-            Functions documentation ready
+            For example: B3 + max(A1,C4 ^3) <br/>
+            Or: if(tan D1 %lt 1, D1, atan(1-D1))
           </div>
           <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
-            Functions documentation ready
+             All basic arithmetic and trigonometric functions and operators are available, as well as string concatenation with "||" and string lenghth with "length"
           </div>
           <div className="col-lg-3 col-lg-3 col-xl-3 functionsPanelLabel">
-            Functions documentation ready
+             See <a href="https://github.com/silentmatt/expr-eval">here</a> for the complete list. 
           </div>
                 
               
